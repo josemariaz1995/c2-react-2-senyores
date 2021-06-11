@@ -1,10 +1,31 @@
-export const Cabecera = () =>{
-  return(
-  <>
-  <header className="cabecera">
-  <h1>Señores que te apuntan con el dedo</h1>
-  <p className="totales"><span className="nmarcados">0</span> señores que te apuntan con el dedo marcados</p>
-  <a className="accion-marcar" href="marcar-todos">Marcar todos</a>
-</header>
-</>)
-}
+import { useState } from "react";
+
+export const Cabecera = (props) => {
+  const { senyores } = props;
+  const [titulo, setTitutlo] = useState(
+    "señores que te apuntan con el dedo marcados"
+  );
+
+  const marcados = senyores.reduce(
+    (contador, senyor) => (senyor.marcado ? contador + 1 : contador),
+    0
+  );
+
+  const fraseApuntan = ` señor${marcados === 1 ? " " : "es "} que te apunta${
+    marcados === 1 ? " " : "n  "
+  } con el dedo marcado${marcados === 1 ? " " : "s "}`;
+  return (
+    <>
+      <header className="cabecera">
+        <h1>{titulo}</h1>
+        <p className="totales">
+          <span className="nmarcados">{marcados}</span>
+          {fraseApuntan}
+        </p>
+        <a className="accion-marcar" href="marcar-todos">
+          Marcar todos
+        </a>
+      </header>
+    </>
+  );
+};
