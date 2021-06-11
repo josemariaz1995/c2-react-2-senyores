@@ -5,7 +5,6 @@ import { Senyores } from "./components/Senyores";
 import { Tarjeta } from "./components/Tarjeta";
 function App() {
   const [senyores, setSenyores] = useState(new Array(Senyores())[0]);
-  console.log(senyores);
   const modificarMarcado = (id, marcado) =>
     setSenyores((senyores) =>
       senyores.map((senyor) => {
@@ -16,10 +15,21 @@ function App() {
         }
       })
     );
+  const modificarMarcadoTodos = (e) => {
+    e.preventDefault();
+    setSenyores((senyores) =>
+      senyores.map((senyor) => {
+        return { ...senyor, marcado: true };
+      })
+    );
+  };
 
   return (
     <div className="contenedor">
-      <Cabecera senyores={senyores} />
+      <Cabecera
+        senyores={senyores}
+        modificarMarcadoTodos={modificarMarcadoTodos}
+      />
       <main>
         {senyores.map((senyor) => (
           <Tarjeta
