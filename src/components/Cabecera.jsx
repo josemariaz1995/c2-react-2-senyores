@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const Cabecera = (props) => {
-  const { senyores } = props;
+  const { senyores, modificarMarcadoTodos } = props;
   const [titulo, setTitutlo] = useState(
     "señores que te apuntan con el dedo marcados"
   );
@@ -22,7 +22,11 @@ export const Cabecera = (props) => {
           <span className="nmarcados">{marcados}</span>
           {fraseApuntan}
         </p>
-        <a className="accion-marcar" href="marcar-todos">
+        <a
+          className="accion-marcar"
+          href="marcar-todos"
+          onClick={modificarMarcadoTodos}
+        >
           Marcar todos
         </a>
       </header>
