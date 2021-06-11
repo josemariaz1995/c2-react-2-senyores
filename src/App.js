@@ -43,5 +43,8 @@ function App() {
     </div>
   );
 }
-
+/* setTimeout(() => {
+  App();
+}, 2000);
+ */
 export default App;
