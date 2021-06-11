@@ -1,9 +1,15 @@
+import { useState } from "react";
+
 export const Tarjeta = (props) => {
   const {
-    senyores: { nombre, profesion, twitter, estado, imagen, marcado },
+    senyores,
+    senyores: { id, nombre, profesion, twitter, estado, imagen },
+    marcado,
+    modificarMarcado,
   } = props;
+
   return (
-    <article className="senyor">
+    <article className="senyor" onClick={() => modificarMarcado(id, marcado)}>
       <div className="avatar">
         <img
           src={imagen}
