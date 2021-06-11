@@ -1,42 +1,19 @@
-import {Cabecera} from "./components/Cabecera";
-import {Tarjeta} from "./components/Tarjeta"
+import { Cabecera } from "./components/Cabecera";
+import { Senyores } from "./components/Senyores";
+import { Tarjeta } from "./components/Tarjeta";
 function App() {
-  const senyores = [
-    {
-        id: 1,
-        nombre: "El Fary",
-        profesion: "Influencer",
-        foto: "fary.jpg",
-        estado: "R.I.P.",
-        twitter: "Pendiente",
-        marcado: true
-    },
-    {
-        id: 2,
-        nombre: "Julio Iglesias",
-        profesion: "Youtuber",
-        foto: "julio.jpg",
-        estado: "Vivo",
-        twitter: "@JulyChurchs",
-        marcado: false
-    },
-    {
-        id: 3,
-        nombre: "Bertín Osborne",
-        profesion: "Java Developer",
-        foto: "bertin.jpg",
-        estado: "Vivo",
-        twitter: "@BertinOsborne",
-        marcado: true
-    }
-];
+  const senyores = new Array(Senyores());
+  console.log(senyores[0]);
+
   return (
-  <>
     <div className="contenedor">
-    <Cabecera />
-    <Tarjeta  />
-  </div>
-  </>
+      <Cabecera />
+      <main>
+        {senyores[0].map((senyor) => (
+          <Tarjeta key={senyor.id} senyores={senyor} />
+        ))}
+      </main>
+    </div>
   );
 }
 
