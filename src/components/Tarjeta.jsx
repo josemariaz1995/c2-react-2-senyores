@@ -7,6 +7,15 @@ export const Tarjeta = (props) => {
     marcado,
     modificarMarcado,
   } = props;
+  const arrayNombre = nombre.split(" ");
+
+  const inicial = () => {
+    if (arrayNombre[0].length <= 2) {
+      return arrayNombre[1].charAt(0);
+    } else {
+      return nombre.charAt(0);
+    }
+  };
 
   return (
     <article className="senyor" onClick={() => modificarMarcado(id, marcado)}>
@@ -16,7 +25,7 @@ export const Tarjeta = (props) => {
           className={marcado ? "fotoMarcada " : ""}
           alt={`${nombre} señalándote con el dedo`}
         />
-        <span className="inicial">F</span>
+        <span className="inicial">{inicial()}</span>
       </div>
       <div className="info">
         <h2>{nombre}</h2>
