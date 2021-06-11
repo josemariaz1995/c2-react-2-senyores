@@ -45,10 +45,14 @@ html {
   border: 2px solid #fff;
   border-radius: 30px;
   background-color: #6290c3;
-  display: flex;
+
   padding: 15px;
   margin-bottom: 20px;
   position: relative;
+  display: none;
+}
+.mostrar {
+  display: flex;
 }
 .senyor .icono {
   background-color: #060;

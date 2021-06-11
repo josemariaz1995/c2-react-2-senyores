@@ -16,9 +16,18 @@ export const Tarjeta = (props) => {
       return nombre.charAt(0);
     }
   };
-
+  let [mostrar, setMostrar] = useState("");
+  const mostrarTarjeta = () => {
+    setTimeout(() => {
+      setMostrar(" mostrar");
+    }, 2000);
+  };
+  mostrarTarjeta();
   return (
-    <article className="senyor" onClick={() => modificarMarcado(id, marcado)}>
+    <article
+      className={`senyor${mostrar}`}
+      onClick={() => modificarMarcado(id, marcado)}
+    >
       <div className="avatar">
         <img
           src={imagen}
