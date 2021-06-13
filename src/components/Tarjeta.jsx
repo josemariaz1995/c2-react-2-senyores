@@ -17,12 +17,6 @@ export const Tarjeta = (props) => {
     }
   };
   let [mostrar, setMostrar] = useState("");
-  const mostrarTarjeta = () => {
-    setTimeout(() => {
-      setMostrar(" mostrar");
-    }, 2000);
-  };
-  mostrarTarjeta();
   return (
     <article
       className={`senyor${mostrar}`}
