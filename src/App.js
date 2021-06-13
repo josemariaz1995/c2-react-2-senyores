@@ -3,8 +3,11 @@ import { useEffect, useState } from "react";
 import { Cabecera } from "./components/Cabecera";
 import { Senyores } from "./components/Senyores";
 import { Tarjeta } from "./components/Tarjeta";
-function App() {
-  const [senyores, setSenyores] = useState(new Array(Senyores())[0]);
+const App = () => {
+  const [senyores, setSenyores] = useState([]);
+  setTimeout(() => {
+    setSenyores(new Array(Senyores())[0]);
+  }, 2000);
   const modificarMarcado = (id, marcado) =>
     setSenyores((senyores) =>
       senyores.map((senyor) => {
@@ -42,7 +45,7 @@ function App() {
       </main>
     </div>
   );
-}
+};
 /* setTimeout(() => {
   App();
 }, 2000);

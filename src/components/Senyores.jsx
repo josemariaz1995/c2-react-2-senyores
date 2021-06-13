@@ -31,5 +31,8 @@ export const Senyores = () => {
       marcado: true,
     },
   ];
+  /* setTimeout(() => {
+    return senyores;
+  }, 2000); */
   return senyores;
 };
