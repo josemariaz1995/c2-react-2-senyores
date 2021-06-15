@@ -6,10 +6,9 @@ export const Cabecera = (props) => {
     "señores que te apuntan con el dedo marcados"
   );
 
-  const marcados = senyores.reduce(
-    (contador, senyor) => (senyor.marcado ? contador + 1 : contador),
-    0
-  );
+  const marcados = senyores.filter(
+    (senyor) => senyor.marcado
+  ).length;
 
   const fraseApuntan = ` señor${marcados === 1 ? " " : "es "} que te apunta${
     marcados === 1 ? " " : "n  "

@@ -1,5 +1,4 @@
-export const Senyores = () => {
-  const senyores = [
+export const senyoresAPI = [
     {
       id: 1,
       nombre: "El Fary",
@@ -34,5 +33,5 @@ export const Senyores = () => {
   /* setTimeout(() => {
     return senyores;
   }, 2000); */
-  return senyores;
-};
+
+

@@ -1,13 +1,13 @@
 import userEvent from "@testing-library/user-event";
 import { useEffect, useState } from "react";
 import { Cabecera } from "./components/Cabecera";
-import { Senyores } from "./components/Senyores";
+import { senyoresAPI } from "./components/Senyores";
 import { Tarjeta } from "./components/Tarjeta";
 const App = () => {
   const [senyores, setSenyores] = useState([]);
-  setTimeout(() => {
-    setSenyores(new Array(Senyores())[0]);
-  }, 2000);
+useEffect(()=>{
+  setTimeout(()=>{setSenyores(senyoresAPI)},2000)
+},[])
   const modificarMarcado = (id, marcado) =>
     setSenyores((senyores) =>
       senyores.map((senyor) => {
